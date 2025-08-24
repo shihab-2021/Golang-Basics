@@ -21,7 +21,10 @@ This is a theoretical demonstration of Go's lexical scoping rules.
 */
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"learnPackageImport/mathLib"
+)
 
 // Package scope variables
 var (
@@ -48,4 +51,10 @@ func main() {
 		  fmt.Println("Conditional block scope:", conditionalVar)
 	 }
 	 // conditionalVar is not accessible here
+
+	// MathLib function calls -> Package scope
+	 fmt.Println("MathLib Add:", mathLib.Add(2, 3))
+	 fmt.Println("MathLib Subtract:", mathLib.Subtract(5, 2))
+	 fmt.Println("MathLib Multiply:", mathLib.Multiply(3, 4))
+	 fmt.Println("MathLib Divide:", mathLib.Divide(10, 2))
 }
