@@ -1,0 +1,51 @@
+/*
+Package main demonstrates the fundamental concepts of variable scoping in Go.
+
+Scope Types Demonstrated:
+1. Package Scope:
+	- Variables declared outside any function
+	- Accessible throughout the entire package
+	- Declared using 'var' keyword
+
+2. Function/Local Scope:
+	- Variables declared inside a function
+	- Only accessible within that function
+	- Usually declared using short declaration ':='
+
+3. Block Scope:
+	- Variables declared inside a code block (if, for, etc.)
+	- Only accessible within that specific block
+	- Limited lifetime to the block's execution
+
+This is a theoretical demonstration of Go's lexical scoping rules.
+*/
+package main
+
+import "fmt"
+
+// Package scope variables
+var (
+	 globalVar1 = "I am package scoped"
+	 globalVar2 = 100
+)
+
+func main() {
+	 // Function scope variable
+	 localVar := "I am function scoped"
+
+	 fmt.Println("Package scope access:", globalVar1)
+	 fmt.Println("Function scope access:", localVar)
+
+	 // Demonstrating block scope
+	 {
+		  blockVar := "I am block scoped"
+		  fmt.Println("Block scope access:", blockVar)
+	 }
+	 // blockVar is not accessible here
+
+	 if true {
+		  conditionalVar := "I am also block scoped"
+		  fmt.Println("Conditional block scope:", conditionalVar)
+	 }
+	 // conditionalVar is not accessible here
+}
