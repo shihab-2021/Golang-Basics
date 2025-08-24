@@ -6,6 +6,7 @@ Scope Types Demonstrated:
 	- Variables declared outside any function
 	- Accessible throughout the entire package
 	- Declared using 'var' keyword
+	- go mod init learnPackageImport -> to create a module named learnPackageImport
 
 2. Function/Local Scope:
 	- Variables declared inside a function
